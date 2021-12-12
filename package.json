@@ -1,0 +1,57 @@
+{
+  "private": true,
+  "name": "remix-app-template-js",
+  "description": "",
+  "license": "",
+  "scripts": {
+    "build": "npm run build:css && remix build",
+    "build:css": "postcss app/styles/main.css -o app/styles/dist/app.css",
+    "dev": "concurrently \"npm run build:css -- --w\" \"node -r dotenv/config node_modules/.bin/remix dev\"",
+    "postinstall": "remix setup node",
+    "start": "remix-serve build",
+    "format": "prettier --write .",
+    "lint": "npm run lint:js & npm run lint:md",
+    "lint:fix": "npm run lint:js:fix & npm run lint:md:fix",
+    "lint:js": "eslint --ext .js,.jsx --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --fix --ext .js,.jsx --ignore-path .gitignore .",
+    "lint:md": "markdownlint --ignore-path .gitignore .",
+    "lint:md:fix": "markdownlint --fix --ignore-path .gitignore .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.0.6",
+    "@remix-run/serve": "^1.0.6",
+    "dotenv": "^10.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remix": "^1.0.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@remix-run/dev": "^1.0.6",
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.4.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "markdownlint-cli": "^0.30.0",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.0.2",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}
