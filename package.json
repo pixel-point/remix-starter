@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "remix-app-template-js",
-  "description": "",
-  "license": "",
+  "name": "Remix Starter",
+  "description": "A simple starter to get up and developing quickly with Remix",
+  "license": "MIT",
   "scripts": {
     "build": "npm run build:css && remix build",
     "build:css": "postcss app/styles/main.css -o app/styles/dist/app.css",
